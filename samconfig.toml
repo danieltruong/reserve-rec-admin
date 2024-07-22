@@ -35,7 +35,7 @@ parameter_overrides=[
   "ApiGatewayId=changeme",
   "Env=dev",
   "AWSRegion=ca-central-1",
-  "ApiStage=api"
+  "ApiStage=api",
   "ApiCachePolicyId=486d4a19-9c4c-4581-905e-5d7f160fec84"
 ]
 
