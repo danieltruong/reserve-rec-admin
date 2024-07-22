@@ -36,6 +36,8 @@ Parameters:
   DomainCertificateArn:
     Type: String
     Default: arn:aws:acm:us-east-1:970582042516:certificate/ef1d2666-8278-4d20-bdff-e27b55b3246f
+  ApiCachePolicyId:
+    Type: String
 
 Resources:
   CloudFrontOriginAccessIdentity:
@@ -133,7 +135,7 @@ Resources:
               - PATCH
               - DELETE
             # CachingDisabled
-            CachePolicyId: !Ref CloudFrontAPICachePolicy
+            CachePolicyId: !Ref ApiCachePolicyId
             TargetOriginId: !Sub ${ApiGatewayId}
             ViewerProtocolPolicy: redirect-to-https
             # Simple CORS

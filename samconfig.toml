@@ -36,6 +36,7 @@ parameter_overrides=[
   "Env=dev",
   "AWSRegion=ca-central-1",
   "ApiStage=api"
+  "ApiCachePolicyId=486d4a19-9c4c-4581-905e-5d7f160fec84"
 ]
 
 [dev]
@@ -73,7 +74,8 @@ parameter_overrides=[
   "ApiGatewayId=zloys5cfvf",
   "Env=dev",
   "AWSRegion=ca-central-1",
-  "ApiStage=api"
+  "ApiStage=api",
+  "ApiCachePolicyId=486d4a19-9c4c-4581-905e-5d7f160fec84"
 ]
 
 [test]
@@ -111,7 +113,8 @@ parameter_overrides=[
   "ApiGatewayId=zloys5cfvf",
   "Env=test",
   "AWSRegion=ca-central-1",
-  "ApiStage=api"
+  "ApiStage=api",
+  "ApiCachePolicyId=change-me"
 ]
 
 [prod]
@@ -149,5 +152,6 @@ parameter_overrides=[
   "ApiGatewayId=zloys5cfvf",
   "Env=prod",
   "AWSRegion=ca-central-1",
-  "ApiStage=api"
+  "ApiStage=api",
+  "ApiCachePolicyId=change-me"
 ]
