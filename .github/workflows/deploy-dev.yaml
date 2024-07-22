@@ -93,6 +93,7 @@ jobs:
           API_STAGE: ${{ vars.API_STAGE }}
           DOMAIN_NAME: ${{ vars.DOMAIN_NAME }}
           AWS_CERTIFICATE_ARN: ${{ vars.AWS_CERTIFICATE_ARN }}
+          API_CACHE_POLICY_ID: ${{ vars.API_CACHE_POLICY_ID }}
         run: |
           sam deploy --stack-name $STACK_NAME --no-confirm-changeset --no-fail-on-empty-changeset --parameter-overrides \
           DistOriginPath=$DIST_ORIGIN_PATH \
@@ -102,6 +103,7 @@ jobs:
           ApiStage=$API_STAGE \
           EnvDomainName=$DOMAIN_NAME \
           DomainCertificateArn=$AWS_CERTIFICATE_ARN \
+          ApiCachePolicyId=$API_CACHE_POLICY_ID \
 
       ### Upload dist to S3 ###
       - name: Deploy to S3
