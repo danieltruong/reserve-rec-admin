@@ -29,12 +29,20 @@
               {
                 "glob": "**/*",
                 "input": "public"
-              }
+              },
+              "src/assets",
+              "src/env.js"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/ngx-toastr/toastr.css",
+              "node_modules/@digitalspace/bcparks-bootstrap-theme/dist/css/bootstrap-theme.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/@popperjs/core/dist/umd/popper.min.js",
+              "node_modules/@digitalspace/bcparks-bootstrap-theme/dist/js/bootstrap-theme.min.js",
+              "node_modules/keycloak-js/dist/keycloak.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -93,7 +101,9 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/keycloak-js/dist/keycloak.min.js"
+            ]
           }
         },
         "lint": {
