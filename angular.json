@@ -36,7 +36,8 @@
             "styles": [
               "src/styles.scss",
               "node_modules/ngx-toastr/toastr.css",
-              "node_modules/@digitalspace/bcparks-bootstrap-theme/dist/css/bootstrap-theme.min.css"
+              "node_modules/@digitalspace/bcparks-bootstrap-theme/dist/css/bootstrap-theme.min.css",
+              "node_modules/@aws-amplify/ui-angular/theme.css"
             ],
             "scripts": [
               "node_modules/@popperjs/core/dist/umd/popper.min.js",

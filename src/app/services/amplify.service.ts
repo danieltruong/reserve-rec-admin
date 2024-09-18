@@ -20,8 +20,8 @@ export class AmplifyService {
             oauth: {
               domain: this.configService.config['OAUTH_DOMAIN'],
               scopes: ['openid', 'email', 'profile', 'aws.cognito.signin.user.admin'],
-              redirectSignIn: ['http://localhost:4200'],
-              redirectSignOut: ['http://localhost:4200'],
+              redirectSignIn: ['http://localhost:4300'],
+              redirectSignOut: ['http://localhost:4300'],
               responseType: 'code',
             }
           },
