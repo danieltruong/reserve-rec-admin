@@ -40,8 +40,7 @@
             ],
             "scripts": [
               "node_modules/@popperjs/core/dist/umd/popper.min.js",
-              "node_modules/@digitalspace/bcparks-bootstrap-theme/dist/js/bootstrap-theme.min.js",
-              "node_modules/keycloak-js/dist/keycloak.min.js"
+              "node_modules/@digitalspace/bcparks-bootstrap-theme/dist/js/bootstrap-theme.min.js"
             ]
           },
           "configurations": {
@@ -101,9 +100,7 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": [
-              "node_modules/keycloak-js/dist/keycloak.min.js"
-            ]
+            "scripts": []
           }
         },
         "lint": {

@@ -6,23 +6,20 @@ import { ConfigService } from './services/config.service';
 import { provideHttpClient } from '@angular/common/http';
 import { AutoFetchService } from './services/auto-fetch.service';
 import { ToastService } from './services/toast.service';
-import { KeycloakService } from './services/keycloak.service';
 
 import { provideAnimations } from '@angular/platform-browser/animations';
 
 import { provideToastr } from 'ngx-toastr';
+import { AmplifyService } from './services/amplify.service';
 
 export function initConfig(
   configService: ConfigService,
   autoFetchService: AutoFetchService,
-  keycloakService: KeycloakService
+  amplifyService: AmplifyService
 ) {
   return async () => {
     await configService.init();
-    await keycloakService.init();
-    if (keycloakService.isAuthorized()) {
-      autoFetchService.run();
-    }
+    await amplifyService.init();
   };
 }
 
@@ -34,11 +31,10 @@ export const appConfig: ApplicationConfig = {
     {
       provide: APP_INITIALIZER,
       useFactory: initConfig,
-      deps: [ConfigService, AutoFetchService , KeycloakService],
+      deps: [ConfigService, AutoFetchService, AmplifyService],
       multi: true
     },
     ConfigService,
-    KeycloakService,
     AutoFetchService,
     ToastService,
     provideAnimations(), // required animations providers

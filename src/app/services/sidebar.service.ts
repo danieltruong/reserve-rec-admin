@@ -1,7 +1,6 @@
 import { Injectable, Output, EventEmitter, OnDestroy } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { BehaviorSubject, filter, Subscription } from 'rxjs';
-import { KeycloakService } from './keycloak.service';
 
 @Injectable({
   providedIn: 'root',
@@ -15,7 +14,7 @@ export class SidebarService implements OnDestroy {
   public routes;
   public hide = false;
 
-  constructor(protected router: Router, protected keyCloakService: KeycloakService) {
+  constructor(protected router: Router) {
     const routesArray = router.config.filter((obj) => {
       // if (!obj?.data?.['label']) {
       //   return false;

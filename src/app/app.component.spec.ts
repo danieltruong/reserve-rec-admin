@@ -3,7 +3,6 @@ import { AppComponent } from './app.component';
 import { ConfigService } from './services/config.service';
 import { provideHttpClient } from '@angular/common/http';
 import { provideHttpClientTesting } from '@angular/common/http/testing';
-import { KeycloakService } from './services/keycloak.service';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideToastr } from 'ngx-toastr';
 import { ActivatedRoute } from '@angular/router';
@@ -16,7 +15,6 @@ describe('AppComponent', () => {
         {
           provide: ConfigService, useValue: { config: { GH_HASH: 'testing' } }
         },
-        KeycloakService,
         [
           {
             provide: ActivatedRoute,

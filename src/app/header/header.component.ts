@@ -1,10 +1,10 @@
 import { Component, Input, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { ConfigService } from '../services/config.service';
-import { KeycloakService } from '../services/keycloak.service';
 import { SidebarService } from '../services/sidebar.service';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { fetchAuthSession, signInWithRedirect, signOut } from 'aws-amplify/auth';
 
 @Component({
   selector: 'app-header',
@@ -26,8 +26,7 @@ export class HeaderComponent implements OnDestroy {
 
   constructor(
     protected configService: ConfigService,
-    protected sidebarService: SidebarService,
-    protected keycloakService: KeycloakService
+    protected sidebarService: SidebarService
   ) {
     this.subscriptions.add(
       sidebarService.routes.subscribe((routes) => {
@@ -35,13 +34,18 @@ export class HeaderComponent implements OnDestroy {
       })
     );
 
-    this.isAuthorized = this.keycloakService.isAuthorized();
-    this.welcomeMsg = this.keycloakService.getWelcomeMessage();
-
     this.envName = this.configService.config['ENVIRONMENT'];
     if (this.envName === 'prod') {
       this.showBanner = false;
     }
+  }
+
+  async ngOnInit() {
+    const session = await fetchAuthSession();
+  }
+
+  public async onLoginCLick() {
+    await signInWithRedirect();
   }
 
   ngOnDestroy() {
