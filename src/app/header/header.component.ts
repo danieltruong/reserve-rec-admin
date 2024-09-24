@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, Input, OnDestroy } from '@angular/core';
+import { ChangeDetectorRef, Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { ConfigService } from '../services/config.service';
 import { SidebarService } from '../services/sidebar.service';
@@ -13,7 +13,7 @@ import { signInWithRedirect, getCurrentUser, fetchAuthSession, signOut } from 'a
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
-export class HeaderComponent implements OnDestroy {
+export class HeaderComponent implements OnInit, OnDestroy {
   @Input() showSideBar = true;
 
   private subscriptions = new Subscription();
@@ -52,15 +52,14 @@ export class HeaderComponent implements OnDestroy {
     }
 
     // Change this to a back-end service.
-    const self = this;
     setInterval(async () => {
-      self.session = await fetchAuthSession();
-      if (self?.session?.tokens?.idToken?.payload != null) {
-        self.isAuthenticed = true;
+      this.session = await fetchAuthSession();
+      if (this?.session?.tokens?.idToken?.payload != null) {
+        this.isAuthenticed = true;
       } else {
-        self.isAuthenticed = false;
+        this.isAuthenticed = false;
       }
-      self.changeDetectorRef.detectChanges();
+      this.changeDetectorRef.detectChanges();
     }, 15000);
   }
 
