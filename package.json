@@ -1,0 +1,63 @@
+{
+  "name": "reserve-rec-admin",
+  "version": "0.1.0",
+  "bin": {
+    "reserve-rec-admin": "bin/reserve-rec-admin.js"
+  },
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve --port 4300",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test",
+    "cdk": "cdk",
+    "test-ci": "ng test --watch=false",
+    "lint": "ng lint"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^18.2.5",
+    "@angular/common": "^18.2.5",
+    "@angular/compiler": "^18.2.5",
+    "@angular/core": "^18.2.5",
+    "@angular/forms": "^18.2.5",
+    "@angular/platform-browser": "^18.2.5",
+    "@angular/platform-browser-dynamic": "^18.2.5",
+    "@angular/router": "^18.2.5",
+    "@aws-amplify/backend": "^1.2.2",
+    "@aws-amplify/ui": "^6.5.0",
+    "@aws-amplify/ui-angular": "^5.0.24",
+    "@digitalspace/bcparks-bootstrap-theme": "^1.4.6",
+    "@popperjs/core": "^2.11.8",
+    "@types/bootstrap": "^5.2.10",
+    "aws-amplify": "^6.6.1",
+    "aws-cdk-lib": "^2.178.2",
+    "constructs": "^10.0.0",
+    "guid-typescript": "^1.0.9",
+    "mapbox-gl": "^3.6.0",
+    "ngx-toastr": "^19.0.0",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0",
+    "ws": "^8.18.0",
+    "zone.js": "~0.14.3"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^18.2.5",
+    "@angular/cli": "^18.2.5",
+    "@angular/compiler-cli": "^18.2.5",
+    "@babel/helper-environment-visitor": "^7.24.7",
+    "@types/jasmine": "~5.1.0",
+    "angular-eslint": "18.1.0",
+    "aws-cdk": "2.173.2",
+    "eslint": "^9.6.0",
+    "jasmine-core": "~5.1.0",
+    "jest": "^29.7.0",
+    "karma": "~6.4.0",
+    "karma-chrome-launcher": "~3.2.0",
+    "karma-coverage": "~2.2.0",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "~2.1.0",
+    "typescript": "~5.4.2",
+    "typescript-eslint": "8.0.0-alpha.38"
+  }
+}
