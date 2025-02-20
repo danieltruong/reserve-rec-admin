@@ -4,14 +4,10 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-logout',
   templateUrl: './logout.component.html',
-  styleUrls: ['./logout.component.css']
+  styleUrls: ['./logout.component.scss']
 })
 export class LogoutComponent {
 
   constructor(private router: Router) {
-  }
-
-  logout() {
-    this.router.navigate(['/login']);
   }
 }
